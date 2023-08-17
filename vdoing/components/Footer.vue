@@ -1,20 +1,24 @@
 <template>
   <div class="footer">
     <div class="icons" v-if="social && social.icons">
-      <a
-        :href="item.link"
-        :title="item.title"
-        :class="['iconfont', item.iconClass]"
-        v-for="(item, index) in social.icons"
-        :key="index"
-        target="_blank"
-      ></a>
+      <a :href="item.link" :title="item.title" :class="['iconfont', item.iconClass]" v-for="(item, index) in social.icons"
+        :key="index" target="_blank"></a>
     </div>
 
     <template v-if="footer">
       Copyright © {{ footer.createYear }}-{{ new Date().getFullYear() }}
       <span v-html="footer.copyrightInfo"></span>
       <a style="color:#666;" target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">备案号:粤ICP备2023089071号</a>
+      <div style="width:300px;margin:0 auto;position: relative; padding:20px 0;padding-top: 5px;">
+        <img src="../assets/img/beian.png" alt="备案号"/>
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=43100202000429"
+          style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src=""
+            style="float:left;" />
+          <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">湘公网安备 43100202000429号
+          </p>
+        </a>
+      </div>
+
     </template>
   </div>
 </template>
